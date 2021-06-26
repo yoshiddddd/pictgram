@@ -11,7 +11,7 @@
             
             <% if !topic.favorite_users.include?(current_user) %>
             <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
-            <%= image_tag 'icons/heart.png', class: 'unlike_heart' %>
+            <%= image_tag 'icons/heart-black.png', class: 'unlike_heart' %>
             <% end %>
              <% else%>
              <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
@@ -19,10 +19,14 @@
              <%end%>
              
             <% end %>
-
+            
+           <%= link_to "#" do%>
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end%>
             <p class="topic-text">
               <%= topic.description %>
+              <p>コメント</p>
+             <%=  %>
             </p>
           </div>
         </div>
